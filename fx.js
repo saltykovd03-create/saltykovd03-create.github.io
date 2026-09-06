@@ -6,7 +6,8 @@
   if (window.innerWidth < 961) return;
 
   const ctx = cv.getContext('2d', { alpha: true });
-  const N = 9000, GA = Math.PI * (3 - Math.sqrt(5));
+  const W0 = window.innerWidth;
+  const N = W0 > 1700 ? 16000 : 14000, GA = Math.PI * (3 - Math.sqrt(5));
   const PX = new Float32Array(N), PY = new Float32Array(N), PZ = new Float32Array(N);
   for (let i = 0; i < N; i++) {
     const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(Math.max(0, 1 - y * y)), th = i * GA;
@@ -18,14 +19,14 @@
   const AL = 6, STYLE = [], BX = [], BY = [], BS = [], BN = new Int32Array(COL.length * AL);
   for (let c = 0; c < COL.length; c++) {
     for (let a = 0; a < AL; a++) {
-      STYLE.push('rgba(' + COL[c][0] + ',' + COL[c][1] + ',' + COL[c][2] + ',' + ((a + 1) / AL * 0.85).toFixed(3) + ')');
+      STYLE.push('rgba(' + COL[c][0] + ',' + COL[c][1] + ',' + COL[c][2] + ',' + ((a + 1) / AL * 0.95).toFixed(3) + ')');
       BX.push(new Float32Array(N)); BY.push(new Float32Array(N)); BS.push(new Float32Array(N));
     }
   }
 
   let w = 0, h = 0, dpr = 1, cx = 0, cy = 0, R = 0;
   const resize = () => {
-    dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    dpr = Math.min(window.devicePixelRatio || 1, W0 > 2200 ? 1.2 : 1.5);
     w = hero.clientWidth; h = hero.clientHeight;
     cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
     cv.style.width = w + 'px'; cv.style.height = h + 'px';
@@ -71,7 +72,7 @@
       const n = Math.sin(bx * 3.1 + t * 2.0) * Math.sin(by * 2.6 - t * 1.6) * Math.sin(bz * 3.3 + t * 1.2);
       const sp = Math.abs(Math.sin(by * 5.0 + bx * 3.4 + t * 0.8));
       const spike = sp * sp * sp * sp * sp * sp;
-      const rr = R * (0.80 + 0.15 * n + 0.42 * spike);
+      const rr = R * (0.78 + 0.16 * n + 0.46 * spike);
       const x = bx * rr, y = by * rr, z = bz * rr;
       let X = x * ca + z * sa, Z = -x * sa + z * ca;
       const Y = y * ct - Z * st; Z = y * st + Z * ct;
@@ -89,11 +90,13 @@
       if (sx < -30 || sx > w + 30 || sy < -30 || sy > h + 30) continue;
 
       let depth = (s - 0.66) / 0.42; depth = depth < 0 ? 0 : depth > 1 ? 1 : depth;
-      let a = (0.24 + 0.90 * depth) * (0.34 + 0.66 * spike);
+      let fade = (sx / w - 0.06) / 0.54; fade = fade < 0 ? 0 : fade > 1 ? 1 : fade;
+      fade = 0.26 + 0.74 * fade * fade * (3 - 2 * fade);
+      let a = (0.34 + 1.05 * depth) * (0.40 + 0.60 * spike) * fade;
       if (a > 1) a = 1;
       const ai = (a * AL) | 0, ab = ai > AL - 1 ? AL - 1 : ai;
       const b = (i & 3) * AL + ab, k = BN[b]++;
-      BX[b][k] = sx; BY[b][k] = sy; BS[b][k] = depth > 0.72 ? 2 : 1;
+      BX[b][k] = sx; BY[b][k] = sy; BS[b][k] = depth > 0.68 ? 2 : 1;
     }
 
     for (let b = 0; b < STYLE.length; b++) {

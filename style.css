@@ -113,9 +113,7 @@ html.js .header.is-scrolled { opacity: 1; transform: none; pointer-events: auto;
     radial-gradient(800px 500px at 10% 90%, color-mix(in srgb, var(--copper) 16%, transparent), transparent 60%),
     var(--navy);
 }
-.hero__fx { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .9;
-  mask-image: linear-gradient(90deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,.55) 32%, #000 60%);
-  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,.55) 32%, #000 60%); }
+.hero__fx { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .9; }
 @media (max-width: 960px) { .hero__fx { display: none; } }
 .hero__bg::after {
   content: ''; position: absolute; inset: 0; opacity: .35;
