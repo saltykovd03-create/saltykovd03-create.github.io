@@ -12,7 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230B1424%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2730%27 fill=%27%23C4712F%27 text-anchor=%27middle%27%3E%D0%94%D0%A1%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css?v=1">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 
@@ -47,7 +47,7 @@
         <span class="line line--em" data-hero-line>Скоро вам 3,14здец.</span>
       </h1>
       <div class="hero__row" data-hero-line>
-        <p class="hero__lead">Первый работающий агент на ваших данных за неделю. Дальше время экономит уже он.</p>
+        <p class="hero__lead">Три минуты чтения, если вам прислали эту ссылку. Ниже без воды:</p>
         <div class="robot-wrap robot-wrap--m" aria-hidden="true"><div class="robot-stage"><svg class="robot" viewBox="0 0 120 140">
             <g class="robot__glow"><ellipse cx="60" cy="134" rx="34" ry="4"/></g>
             <line x1="60" y1="8" x2="60" y2="22" class="robot__line"/>
@@ -67,7 +67,12 @@
             <circle cx="68" cy="103" r="2.6" class="robot__led led-c"/>
           </svg><div class="robot-scan"></div></div></div>
       </div>
-      <p class="hero__cold" data-hero-line><b>Три минуты чтения.</b> Куда идёт экономика, что можно снять за неделю и почему ждать уже некуда.</p>
+      <ul class="hero__preview" data-hero-line>
+        <li><b>Куда идёт экономика</b> и почему ждать уже некуда</li>
+        <li><b>Семь задач</b>, которые агент снимает за неделю на ваших данных</li>
+        <li><b>Четырнадцать кейсов</b> с настоящими цифрами из одной компании</li>
+        <li><b>Два формата работы</b>, включая вариант без доступа к вашим данным</li>
+      </ul>
       <dl class="hero__facts" data-hero-line>
         <div><dt>100+</dt><dd>агентов в продакшене</dd></div>
         <div><dt>4 дня</dt><dd>от первого агента до работающей системы</dd></div>
@@ -137,21 +142,25 @@
   </div>
   <!-- Блок 3.2. Зачем мне это -->
   <section class="section creed" id="creed">
-    <div class="container creed__grid">
-      <div>
-        <p class="eyebrow" data-reveal>Зачем мне это</p>
-        <h2 class="creed__h" data-reveal>Это <span class="em">ремесло</span>, а не курс.</h2>
+    <div class="container">
+      <div class="creed__head">
+        <div>
+          <p class="eyebrow" data-reveal>Зачем мне это</p>
+          <h2 class="creed__h" data-reveal>Это <span class="em">ремесло</span>, а не курс.</h2>
+        </div>
         <p class="creed__lead" data-reveal>Я построил всё это у себя, потому что иначе не успевал. Оказалось, что делать бизнес эффективнее в разы мне нравится больше, чем что-либо ещё.</p>
       </div>
       <div class="creed__cols">
         <ul class="creed__list creed__list--no" data-reveal>
           <li>Не продаю <b>курсы</b> и не веду вебинары</li>
-          <li>Не обещаю <b>«ИИ-трансформацию»</b></li>
-          <li>Не беру деньги за <b>презентации</b></li>
+          <li>Не обещаю <b>«ИИ-трансформацию»</b> и не рисую стратегии</li>
+          <li>Не беру деньги за <b>презентации</b> и красивые слова</li>
+          <li>Не делаю то, что <b>не смогу проверить</b> цифрой</li>
         </ul>
         <ul class="creed__list creed__list--yes" data-reveal data-delay="0.1">
           <li><b>Живой бизнес</b>, в котором есть что снимать</li>
           <li><b>Контакт</b> с людьми, которые его ведут</li>
+          <li><b>Задачи</b>, результат которых виден за неделю</li>
           <li><b>Честный заработок</b> за результат, который можно проверить</li>
         </ul>
       </div>
@@ -179,7 +188,7 @@
           <p>Компания, где кто-то построил контур, через год ведёт учёт, продажи и поддержку вдвое меньшим числом людей. Компания, где не построил, конкурирует с ней по цене. И третий сценарий, о котором редко говорят: ваш сотрудник, который разобрался сам, через полгода либо ваш главный актив, либо конкурент с вашей клиентской базой в голове.</p>
         </article>
       </div>
-      <p class="why__out" data-reveal>Поэтому сейчас важно не «изучать ИИ», а один раз поговорить с человеком, который довёл это до продакшена, и понять, что именно у вас можно снять за неделю. Дальше вы решите: со мной, самим или никак.</p>
+      <div class="why__out" data-reveal><p>Поэтому сейчас важно не «изучать ИИ», а один раз поговорить с человеком, который <span class="em">довёл это до продакшена</span>, и понять, что именно у вас можно снять за неделю. Дальше вы решите: со мной, самим или никак.</p></div>
     </div>
   </section>
 
@@ -393,9 +402,9 @@
   <!-- Блок 9. Контакт -->
   <section class="section contact" id="contact">
     <div class="container">
-      <p class="eyebrow eyebrow--light" data-reveal>Один созвон на 30 минут</p>
-      <h2 class="contact__h" data-reveal>Расскажите, что у вас до сих пор делается руками.</h2>
-      <p class="contact__p" data-reveal>Я скажу, что из этого агент заберёт сразу, что за неделю, а что потребует месяца с дообучением на ваших данных. Без обязательств и без презентаций. Обычно раскладывается так:</p>
+      <p class="eyebrow eyebrow--light" data-reveal>Первый шаг</p>
+      <h2 class="contact__h" data-reveal>Давайте решим одну вашу задачу вместе.</h2>
+      <p class="contact__p" data-reveal>Выберите то, что раздражает дольше всего: отчёт, сверка, заявки, договор, переписка. За 30 минут разберём, что из этого агент снимет за час, что за неделю, а что потребует месяца с дообучением на ваших данных. Без обязательств и без презентаций:</p>
       <div class="horizon" data-reveal>
         <div class="horizon__cell">
           <span class="horizon__t">За час</span>
@@ -411,7 +420,7 @@
         </div>
       </div>
       <div class="contact__btns" data-reveal>
-        <a href="https://t.me/shabb1on?text=Хочу%20созвон%20на%2030%20минут" class="btn btn--copper btn--lg" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a href="https://t.me/shabb1on?text=Хочу%20решить%20одну%20задачу" class="btn btn--copper btn--lg" target="_blank" rel="noopener">Написать в Telegram</a>
         <a href="tel:+79027045877" class="btn btn--ghost btn--lg">+7 902 704-58-77</a>
         <span class="contact__small">Дмитрий Салтыков · Москва · @shabb1on</span>
       </div>
