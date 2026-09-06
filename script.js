@@ -112,7 +112,7 @@
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const y = target.getBoundingClientRect().top + window.scrollY - 64;
+      const y = id === '#top' ? 0 : target.getBoundingClientRect().top + window.scrollY - 64;
       window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
     });
   });

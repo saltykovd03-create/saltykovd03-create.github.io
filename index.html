@@ -12,7 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230B1424%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2730%27 fill=%27%23C4712F%27 text-anchor=%27middle%27%3E%D0%94%D0%A1%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css?v=1">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -34,20 +34,19 @@
 <!-- Блок 2. Hero -->
 <section class="hero" aria-label="Главный экран">
   <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__top" data-hero-line>
+    <a href="https://t.me/shabb1on" class="btn btn--sm btn--copper" target="_blank" rel="noopener">Написать в Telegram</a>
+  </div>
   <div class="container hero__grid">
     <div class="hero__text">
-      <p class="eyebrow eyebrow--light" data-hero-line>Операционный директор и автоматизации · агенты для учёта и процессов</p>
+      <p class="eyebrow eyebrow--light" data-hero-line>Дмитрий Салтыков · операционный директор · ИИ-агенты для учёта и процессов</p>
       <h1 class="hero__h1">
         <span class="line" data-hero-line>Нет времени внедрять</span>
         <span class="line" data-hero-line>искусственный интеллект?</span>
         <span class="line line--em" data-hero-line>Оно и не нужно.</span>
       </h1>
-      <p class="hero__lead" data-hero-line>Первый работающий агент на ваших данных появляется за неделю, и дальше время экономит уже он. Проверено на компании с выручкой 500 млн в год: 56 агентов, ноль программистов в штате.</p>
-      <p class="hero__cold" data-hero-line><b>Уделите три минуты и дочитайте до конца.</b> Ниже про то, куда идёт экономика прямо сейчас, и почему те, кто внедрит агентов в этом году, окажутся на несколько шагов впереди конкурентов, а остальные будут догонять. Ждать и откладывать уже некуда.</p>
-      <div class="hero__cta" data-hero-line>
-        <a href="#start" class="btn btn--copper">Что можно снять за неделю</a>
-        <a href="https://t.me/shabb1on" class="btn btn--ghost" target="_blank" rel="noopener">Написать в Telegram</a>
-      </div>
+      <p class="hero__lead" data-hero-line>Первый работающий агент на ваших данных за неделю. Дальше время экономит уже он.</p>
+      <p class="hero__cold" data-hero-line><b>Три минуты чтения.</b> Куда идёт экономика, что можно снять за неделю и почему ждать уже некуда.</p>
       <dl class="hero__facts" data-hero-line>
         <div><dt>56</dt><dd>агентов в продакшене</dd></div>
         <div><dt>6 нед.</dt><dd>от первого коммита до 56 проектов</dd></div>
@@ -144,10 +143,8 @@
   <!-- Блок 5. С чего начинают: стопка из семи карточек -->
   <section class="section start" id="start">
     <div class="container start__head">
-      <div>
-        <p class="eyebrow" data-reveal>С чего обычно начинают</p>
-        <h2 class="h2" data-reveal>Семь задач, которые почти всегда <span class="em">находят деньги или время</span></h2>
-      </div>
+      <p class="eyebrow" data-reveal>С чего обычно начинают</p>
+      <h2 class="h2" data-reveal>Семь задач, которые почти всегда <span class="em">находят деньги или время</span></h2>
       <p class="lead" data-reveal data-delay="0.1">Каждая делается за несколько дней на ваших данных. Листайте и выберите свою.</p>
     </div>
 
@@ -249,26 +246,28 @@
 
   <!-- Блок 6. Возможно всё -->
   <section class="section any" id="any">
-    <div class="container any__grid">
-      <div>
-        <p class="eyebrow" data-reveal>А если задача не из списка</p>
-        <h2 class="any__h" data-reveal>Что бы вы ни придумали, это либо уже возможно, либо станет возможным в течение недели.</h2>
-        <p class="any__p" data-reveal>Своё приложение, сайт под рекламу, бот, который отвечает клиентам голосом, презентация, которая собирается сама, отчёт, который приходит на телефон. Всё, что связано с экраном в вашей руке, теперь делается быстро. Расскажите идею, а как её сделать, научить вашу команду или собрать самому, решим на созвоне.</p>
-        <div class="any__cta" data-reveal>
-          <a href="https://t.me/shabb1on?text=Есть%20идея%2C%20хочу%20обсудить" class="btn btn--copper" target="_blank" rel="noopener">Обсудить идею</a>
-          <small>Созвон 30 минут, ни к чему не обязывает. Если идея не взлетит, скажу сразу и почему.</small>
+    <div class="container">
+      <p class="eyebrow" data-reveal>А если задача не из списка</p>
+      <h2 class="any__h" data-reveal>Что бы вы ни придумали, это либо уже возможно, либо станет возможным в течение недели.</h2>
+      <div class="any__grid">
+        <div>
+          <p class="any__p" data-reveal>Своё приложение, сайт под рекламу, бот, который отвечает клиентам голосом, презентация, которая собирается сама, отчёт, который приходит на телефон. Всё, что связано с экраном в вашей руке, теперь делается быстро. Расскажите идею, а как её сделать, научить вашу команду или собрать самому, решим на созвоне.</p>
+          <div class="any__cta" data-reveal>
+            <a href="https://t.me/shabb1on?text=Есть%20идея%2C%20хочу%20обсудить" class="btn btn--copper" target="_blank" rel="noopener">Обсудить идею</a>
+            <small>Созвон 30 минут, ни к чему не обязывает. Если идея не взлетит, скажу сразу и почему.</small>
+          </div>
         </div>
+        <ul class="any__list" data-reveal>
+          <li><span>01</span>Своё приложение или личный кабинет для клиентов</li>
+          <li><span>02</span>Сайт или лендинг под рекламу, с аналитикой с первого дня</li>
+          <li><span>03</span>Бот в Telegram или MAX, который продаёт, записывает, напоминает</li>
+          <li><span>04</span>Голосовой помощник на входящих звонках и заявках</li>
+          <li><span>05</span>Отчёт для собственника, который сам приходит утром в телефон</li>
+          <li><span>06</span>Презентация, КП, договор по шаблону за минуты, а не за вечер</li>
+          <li><span>07</span>Расшифровка встреч и звонков с задачами и сроками</li>
+          <li><span>08</span>Обучение команды: кто что делает с ИИ и по каким правилам</li>
+        </ul>
       </div>
-      <ul class="any__list" data-reveal>
-        <li><span>01</span>Своё приложение или личный кабинет для клиентов</li>
-        <li><span>02</span>Сайт или лендинг под рекламу, с аналитикой с первого дня</li>
-        <li><span>03</span>Бот в Telegram или MAX, который продаёт, записывает, напоминает</li>
-        <li><span>04</span>Голосовой помощник на входящих звонках и заявках</li>
-        <li><span>05</span>Отчёт для собственника, который сам приходит утром в телефон</li>
-        <li><span>06</span>Презентация, КП, договор по шаблону за минуты, а не за вечер</li>
-        <li><span>07</span>Расшифровка встреч и звонков с задачами и сроками</li>
-        <li><span>08</span>Обучение команды: кто что делает с ИИ и по каким правилам</li>
-      </ul>
     </div>
   </section>
 
@@ -276,11 +275,9 @@
   <section class="section cases" id="cases">
     <div class="container">
       <div class="cases__head">
-        <div>
-          <p class="eyebrow" data-reveal>Что уже сделано</p>
-          <h2 class="h2" data-reveal>Пятнадцать кейсов <span class="em">из одной компании</span></h2>
-        </div>
-        <p class="lead" data-reveal data-delay="0.1">Розница и сервис, два юрлица, выручка около 500 млн в год. Название не привожу по договорённости, цифры и инструменты настоящие, всё работает сегодня.</p>
+        <p class="eyebrow" data-reveal>Что уже сделано</p>
+        <h2 class="h2" data-reveal>Пятнадцать кейсов <span class="em">из одной компании</span></h2>
+        <p class="lead" data-reveal data-delay="0.1">Розница и сервис, выручка около 500 млн в год. Название не привожу по договорённости, цифры и инструменты настоящие, всё работает сегодня.</p>
       </div>
 
       <ol class="ledger" data-reveal>
@@ -294,7 +291,7 @@
         <li><b>Сквозная аналитика.</b> Визиты, заявки, продажи, выручка по каждому рекламному каналу в одном дашборде. <em>Цена клиента до денег, а не до лида.</em></li>
         <li><b>Летописец встреч.</b> Все встречи записываются, расшифровываются, решения и задачи выписываются сами. <em>Память компании, к которой можно обратиться через месяц.</em></li>
         <li><b>Задачи голосом.</b> Владелец диктует боту задачу голосом, агент заводит её с исполнителем и сроком. <em>Ноль потерянных поручений.</em></li>
-        <li><b>Отчёты механиков.</b> Механики пишут вечерний отчёт в чат, агент разбирает его по работам и единицам техники. <em>Сдельная оплата и учёт работ из одного сообщения.</em></li>
+        <li><b>Отчёты сотрудников.</b> Сотрудники пишут вечерний отчёт в чат, агент разбирает его по работам и единицам техники. <em>Сдельная оплата и учёт работ из одного сообщения.</em></li>
         <li><b>Закупки в одном месте.</b> Закупщик ведёт партии в CRM, счета из чатов читаются сами, дашборд показывает отсрочки и просрочки. <em>Просрочка считается от плана, а не по памяти.</em></li>
         <li><b>Платёжный календарь.</b> Каждый день в 13:00 сводка обязательств по счетам и поставкам в чат логистики. <em>Кассовые разрывы видны за неделю, а не в день платежа.</em></li>
         <li><b>Ежедневный баланс.</b> Активы и пассивы сходятся каждый день; нашли 32,7 млн «живых» авансов по закрытым сделкам. <em>Расхождение 7–8 млн объяснено построчно, у каждой цифры формула.</em></li>
@@ -354,15 +351,29 @@
 
   <!-- Блок 9. Контакт -->
   <section class="section contact" id="contact">
-    <div class="container contact__in">
+    <div class="container">
       <p class="eyebrow eyebrow--light" data-reveal>Один созвон на 30 минут</p>
       <h2 class="contact__h" data-reveal>Расскажите, что у вас до сих пор делается руками.</h2>
-      <p class="contact__p" data-reveal>Я скажу, что из этого агент заберёт за неделю, что через месяц, а что не стоит трогать. Без обязательств и без презентаций.</p>
-      <div class="contact__btns" data-reveal>
-        <a href="https://t.me/shabb1on" class="btn btn--copper btn--lg" target="_blank" rel="noopener">Написать в Telegram</a>
-        <a href="tel:+79027045877" class="btn btn--ghost btn--lg">+7 902 704-58-77</a>
+      <p class="contact__p" data-reveal>Я скажу, что из этого агент заберёт сразу, что за неделю, а что потребует месяца с дообучением на ваших данных. Без обязательств и без презентаций. Обычно раскладывается так:</p>
+      <div class="horizon" data-reveal>
+        <div class="horizon__cell">
+          <span class="horizon__t">За час</span>
+          <p>Разбор одного договора на риски. Сводка по чату за неделю. Ответ на вопрос «сколько мы должны поставщикам» из ваших же таблиц.</p>
+        </div>
+        <div class="horizon__cell">
+          <span class="horizon__t">За неделю</span>
+          <p>Ежедневный баланс. Квалификатор заявок в чатах. Контроль сделок по понедельникам. Заявки с сайта в CRM с автоответом.</p>
+        </div>
+        <div class="horizon__cell">
+          <span class="horizon__t">За месяц</span>
+          <p>Летописец на всех встречах. Контроль качества переписок и звонков. Свой календарь, кабинет или приложение, дообученные на ваших данных.</p>
+        </div>
       </div>
-      <p class="contact__small" data-reveal>Дмитрий Салтыков · Москва · @shabb1on</p>
+      <div class="contact__btns" data-reveal>
+        <a href="https://t.me/shabb1on?text=Хочу%20созвон%20на%2030%20минут" class="btn btn--copper btn--lg" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a href="tel:+79027045877" class="btn btn--ghost btn--lg">+7 902 704-58-77</a>
+        <span class="contact__small">Дмитрий Салтыков · Москва · @shabb1on</span>
+      </div>
     </div>
   </section>
 
@@ -381,6 +392,6 @@
 
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
