@@ -116,7 +116,7 @@ html.js .header.is-scrolled { opacity: 1; transform: none; pointer-events: auto;
 @media (max-width: 960px) { .hero__grid { grid-template-columns: 1fr; gap: 40px; } }
 .hero__h1 { margin: 6px 0 22px; padding: clamp(18px, 2.2vw, 30px) clamp(20px, 2.6vw, 34px); border-radius: 22px; background: rgba(18, 32, 54, .85); border: 1px solid rgba(127, 166, 208, .28); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .06); font-weight: 700; letter-spacing: -.02em; }
 .hero__h1 .line { display: block; }
-.hero__h1 .line--q { font-size: clamp(22px, 2.35vw, 34px); line-height: 1.14; max-width: none; color: var(--paper); }
+.hero__h1 .line--q { font-size: clamp(20px, 2.2vw, 32px); line-height: 1.14; max-width: none; color: var(--paper); }
 .hero__h1 .line--em { margin-top: 8px; font-size: clamp(30px, 3.3vw, 46px); line-height: 1; letter-spacing: -.03em; color: var(--copper);
   text-shadow: 0 0 18px rgba(196, 113, 47, .55), 0 0 60px rgba(196, 113, 47, .35); animation: em-glow 3.2s ease-in-out infinite; }
 @keyframes em-glow { 0%, 100% { text-shadow: 0 0 18px rgba(196,113,47,.5), 0 0 60px rgba(196,113,47,.3); } 50% { text-shadow: 0 0 26px rgba(214,131,60,.85), 0 0 90px rgba(196,113,47,.5); color: #D98A45; } }
@@ -327,9 +327,9 @@ html.js:not(.reduce) [data-hero-line].is-in { opacity: 1; transform: none; trans
   .hero__preview { margin-top: 8px; }
   .hero__preview li { padding: 6px 0 6px 22px; line-height: 1.4; }
   .hero__top { margin-bottom: 22px; }
-  .hero__h1 .line--q { font-size: 23px; max-width: none; }
+  .hero__h1 .line--q { font-size: 19.5px; max-width: none; letter-spacing: -.01em; }
   .hero__preview li { font-size: 14px; }
-  .hero__h1 .line--em { font-size: 34px; }
+  .hero__h1 .line--em { font-size: 28px; margin-top: 6px; }
   .hero__lead { font-size: 15.5px; }
   .hero__cold { font-size: 13.5px; margin-top: 16px; padding: 10px 14px; }
   .log { margin: 0 0 16px; }
@@ -386,3 +386,5 @@ html.reduce .robot-stage { animation: none; } html.reduce .robot__eye, html.redu
 .creed__list--yes li::before { content: '+'; color: var(--copper); font-weight: 500; }
 .creed__list b { color: var(--ink); font-weight: 600; }
 .creed__list--yes b { color: var(--copper); }
+
+@media (max-width: 380px) { .hero__h1 .line--q { font-size: 18px; } .hero__h1 .line--em { font-size: 25px; } }
