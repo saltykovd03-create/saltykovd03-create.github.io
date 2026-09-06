@@ -407,3 +407,43 @@ html.reduce .robot-stage { animation: none; } html.reduce .robot__eye, html.redu
 @media (max-width: 380px) { .hero__h1 { padding: 12px 12px; } .hero__h1 .line--q { font-size: 16.5px; letter-spacing: -.015em; } .hero__h1 .line--em { font-size: 24px; } }
 
 .why { padding-bottom: 28px; }
+
+/* ============ 19. Мобильная плотность ============ */
+@media (max-width: 640px) {
+  .beat__h { font-size: 21px; line-height: 1.2; margin: 10px 0 10px; }
+  .beat p { font-size: 15px; }
+  .beat { padding-top: 16px; }
+  .why__beats { gap: 22px; }
+  .why__out { margin-top: 22px; padding: 18px 20px; }
+  .why__out p { font-size: 18px; }
+  .creed__h { font-size: 28px; }
+  .creed__lead { font-size: 15.5px; }
+  .h2 { font-size: 28px; }
+  .lead { font-size: 16px; margin-top: 10px; }
+  .card__in { padding: 20px 18px; gap: 10px; }
+  .card__h { font-size: 22px; }
+  .card__lead { font-size: 15px; }
+  .card__res { font-size: 15px; padding: 8px 12px; }
+  .card__foot { flex-direction: column; align-items: stretch; gap: 10px; padding-top: 14px; }
+  .card__cta { font-size: 16px; }
+  .card__foot .btn { width: 100%; }
+  .any__h { font-size: 26px; }
+  .any__p { font-size: 16px; }
+  .any__list li { font-size: 15px; padding: 12px 0; }
+  .ledger li { font-size: 15px; padding: 12px 0 12px 36px; }
+  .ledger li::before { top: 15px; }
+  .fmt { padding: 20px 18px; }
+  .fmt h3 { font-size: 24px; }
+  .fmt p, .fmt li { font-size: 15px; }
+  .principles-plate { padding: 18px; }
+  .principles-plate__p { font-size: 17px; }
+  .principles li { font-size: 14.5px; }
+  .contact__h { font-size: 30px; }
+  .contact__p { font-size: 16px; }
+  .contact__btns { flex-direction: column; align-items: stretch; }
+  .contact__btns .btn { width: 100%; }
+  .contact__small { text-align: center; }
+  .marquee { padding: 14px 0; }
+}
+
+@media (max-width: 640px) { .contact__small { font-size: 12px; white-space: normal; line-height: 1.5; } }
