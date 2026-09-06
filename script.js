@@ -55,6 +55,27 @@
     place(); window.addEventListener('resize', place);
   })();
 
+  /* ---------- 1.2. Десктоп: низ окна агентов вровень с последней строкой текста ---------- */
+  (function () {
+    const text = document.querySelector('.hero__text');
+    const side = document.querySelector('.hero__side');
+    if (!text || !side) return;
+    const fit = () => {
+      const log = side.querySelector('.log');
+      if (!log) return;
+      if (window.innerWidth < 961) { log.style.height = ''; return; }
+      log.style.height = '';
+      const last = text.lastElementChild || text;
+      const h = Math.round(last.getBoundingClientRect().bottom - log.getBoundingClientRect().top);
+      if (h > 200) log.style.height = h + 'px';
+    };
+    fit();
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    setTimeout(fit, 400); setTimeout(fit, 1200);
+  })();
+
   /* ---------- 2. Появление строк hero ---------- */
   const heroLines = document.querySelectorAll('[data-hero-line]');
   heroLines.forEach((el, n) => setTimeout(() => el.classList.add('is-in'), reduce ? 0 : 120 + n * 90));

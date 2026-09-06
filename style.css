@@ -74,10 +74,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn--sm { padding: 10px 18px; font-size: 14.5px; }
 .btn--lg { padding: 18px 32px; font-size: 18px; }
 .btn--copper { background: var(--copper); color: #fff; }
-.header .btn--copper, .hero__top .btn--copper, .sticky-cta { animation: cta-pulse 2.6s ease-in-out infinite; }
+.header .btn--copper, .hero__top .btn--copper { animation: cta-pulse 2.6s ease-in-out infinite; }
 .header .btn--copper:hover, .hero__top .btn--copper:hover { animation-play-state: paused; }
 @keyframes cta-pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--copper) 55%, transparent); } 60% { box-shadow: 0 0 0 12px color-mix(in srgb, var(--copper) 0%, transparent); } }
-html.reduce .header .btn--copper, html.reduce .hero__top .btn--copper, html.reduce .sticky-cta { animation: none; }
+html.reduce .header .btn--copper, html.reduce .hero__top .btn--copper { animation: none; }
 .btn--copper:hover { background: var(--copper-2); }
 .btn--ghost { background: transparent; color: var(--paper); border-color: var(--line-light); }
 .btn--ghost:hover { border-color: var(--paper); }
@@ -128,7 +128,7 @@ html.js .header.is-scrolled { opacity: 1; transform: none; pointer-events: auto;
 .hero__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: stretch; }
 .hero__side { display: flex; flex-direction: column; gap: 18px; }
 .robot-wrap--d { flex: 0 0 auto; }
-.hero__side .log { flex: 1 1 auto; display: flex; flex-direction: column; }
+.hero__side .log { flex: 0 0 auto; display: flex; flex-direction: column; overflow: hidden; }
 .hero__side .log__lines { flex: 1 1 auto; }
 @media (max-width: 960px) { .hero__grid { grid-template-columns: 1fr; gap: 40px; } }
 .hero__h1 { margin: 6px 0 22px; padding: clamp(18px, 2.2vw, 30px) clamp(20px, 2.6vw, 34px); border-radius: 22px; background: color-mix(in srgb, var(--navy-2) 85%, transparent); border: 1px solid color-mix(in srgb, var(--steel) 28%, transparent); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .06); font-weight: 700; letter-spacing: -.02em; }
@@ -287,15 +287,8 @@ html.reduce .marquee__track { animation: none; }
 .footer { position: relative; z-index: 2; background: var(--navy); color: color-mix(in srgb, var(--paper) 50%, transparent); font-size: 13px; }
 .footer__in { display: flex; justify-content: space-between; gap: 24px; padding: 20px 0 32px; border-top: 1px solid var(--line-light); }
 .footer a { color: color-mix(in srgb, var(--paper) 70%, transparent); }
-.sticky-cta { display: none; }
 @media (max-width: 640px) {
-  .sticky-cta {
-    display: flex; align-items: center; justify-content: center; position: fixed; left: 16px; right: 16px; bottom: 14px; z-index: 60;
-    padding: 13px; border-radius: 999px; font-size: 15px; background: var(--copper); color: #fff; font-weight: 600; text-decoration: none;
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, .5); transform: translateY(160%); visibility: hidden; transition: transform .4s var(--ease-out), visibility 0s .4s;
-  }
-  .sticky-cta.is-on { transform: none; visibility: visible; transition: transform .4s var(--ease-out), visibility 0s; }
-  .contact { padding-bottom: 56px; }
+  .contact { padding-bottom: 40px; }
 }
 
 /* ============ 14. Reveal ============ */
