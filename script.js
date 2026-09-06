@@ -92,6 +92,7 @@
   const headerOffset = () => (window.innerWidth >= 1024 ? 84 : 72);
   const layoutStack = () => {
     const vh = window.innerHeight;
+    if (window.innerWidth >= 961) { cards.forEach((card) => { card.style.top = ''; card.style.transformOrigin = ''; }); if (window.ScrollTrigger) ScrollTrigger.refresh(); return; }
     cards.forEach((card) => {
       const top = Math.min(headerOffset(), vh - card.offsetHeight - 12);
       card.style.top = top + 'px';
@@ -105,7 +106,7 @@
 
   if (window.gsap && window.ScrollTrigger && !reduce) {
     gsap.registerPlugin(ScrollTrigger);
-    cards.forEach((card, i) => {
+    if (window.innerWidth < 961) cards.forEach((card, i) => {
       if (i === cards.length - 1) return;
       const veil = card.querySelector('[data-stack-veil]');
       const st = { trigger: cards[i + 1], start: 'top bottom', end: 'top top', scrub: true };

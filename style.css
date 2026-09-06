@@ -235,7 +235,7 @@ html.reduce .marquee__track { animation: none; }
 .any .eyebrow { color: var(--steel); }
 .any__grid { display: grid; grid-template-columns: 5fr 7fr; gap: 32px 56px; align-items: start; margin-top: 22px; }
 @media (max-width: 960px) { .any__grid { grid-template-columns: 1fr; gap: 24px; } }
-.any__h { font-size: clamp(30px, 4vw, 50px); line-height: 1.04; font-weight: 600; max-width: 26ch; }
+.any__h { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.06; font-weight: 600; max-width: none; }
 .any__p { font-size: 17px; color: color-mix(in srgb, var(--paper) 80%, transparent); max-width: 48ch; }
 .any__list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; border-top: 1px solid var(--line-light); }
 @media (max-width: 640px) { .any__list { grid-template-columns: 1fr; } }
@@ -389,11 +389,10 @@ html.reduce .robot-stage { animation: none; } html.reduce .robot__eye, html.redu
 
 /* ============ 18. Зачем мне это ============ */
 .creed { padding-top: clamp(28px, 3vw, 40px); padding-bottom: 0; }
-.creed__head { display: grid; grid-template-columns: 5fr 7fr; gap: 16px 64px; align-items: end; margin-bottom: 20px; }
-@media (max-width: 860px) { .creed__head { grid-template-columns: 1fr; } }
+.creed__head { margin-bottom: 20px; }
 .creed .container { padding-bottom: clamp(28px, 3.5vw, 44px); border-bottom: 1px solid var(--line); }
 .creed__h { font-size: clamp(32px, 4.4vw, 56px); line-height: 1.02; font-weight: 600; }
-.creed__lead { font-size: 17px; color: var(--ink-2); max-width: 60ch; }
+.creed__lead { font-size: 17px; color: var(--ink-2); max-width: none; margin-top: 12px; }
 .creed__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; }
 @media (max-width: 640px) { .creed__cols { grid-template-columns: 1fr; gap: 0; } .creed__list--yes li:first-child { border-top: 0; } .creed__list li { font-size: 15px; padding: 8px 0 8px 24px; } .creed__h { font-size: 30px; } .creed__lead { font-size: 15.5px; } }
 .creed__list li { position: relative; padding: 9px 0 9px 26px; border-bottom: 1px solid var(--line); font-size: 15.5px; color: var(--ink-2); }
@@ -479,3 +478,25 @@ html.reduce .robot-stage { animation: none; } html.reduce .robot__eye, html.redu
   .cmodal__sheet { width: 100%; border-radius: 24px 24px 0 0; padding: 22px 18px calc(18px + env(safe-area-inset-bottom)); }
 }
 html.reduce .cmodal__sheet { animation: none; }
+
+/* ============ 21. Суть коротко ============ */
+.gist { padding-top: clamp(28px, 3vw, 40px); padding-bottom: 0; }
+.gist .container { padding-bottom: clamp(28px, 3.5vw, 44px); border-bottom: 1px solid var(--line); }
+.gist__h { font-size: clamp(26px, 3.4vw, 44px); line-height: 1.08; font-weight: 600; }
+.gist__p + .gist__p { margin-top: 12px; }
+.gist__p { margin-top: 14px; font-size: clamp(16px, 1.3vw, 18px); color: var(--ink-2); max-width: none; }
+.gist__p b { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) { .gist__h { font-size: 26px; } .gist__p { font-size: 15.5px; } }
+
+/* ============ 22. Карточки на десктопе: две в ряд ============ */
+@media (min-width: 961px) {
+  .stack { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card { position: static !important; top: auto !important; transform: none !important; }
+  .card__veil { display: none; }
+  .card__in { padding: 30px 32px; height: 100%; }
+  .card__h { font-size: 28px; max-width: none; }
+  .card__lead, .card__res { max-width: none; }
+  .card__foot { margin-top: auto; }
+  .card__in { display: flex; flex-direction: column; }
+  .card__lead { flex: 0 0 auto; }
+}
