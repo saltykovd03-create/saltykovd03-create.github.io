@@ -42,6 +42,19 @@
     if (reduce) items.forEach((el) => el.classList.add('is-on')); else setTimeout(tick, 700);
   }
 
+  /* ---------- 1.1. На телефоне окно агентов сразу под заголовком ---------- */
+  (function () {
+    const log = document.querySelector('.hero__side .log');
+    const h1 = document.querySelector('.hero__h1');
+    const side = document.querySelector('.hero__side');
+    if (!log || !h1 || !side) return;
+    const place = () => {
+      if (window.innerWidth < 960) { if (log.parentElement !== h1.parentElement) h1.insertAdjacentElement('afterend', log); }
+      else if (log.parentElement !== side) side.appendChild(log);
+    };
+    place(); window.addEventListener('resize', place);
+  })();
+
   /* ---------- 2. Появление строк hero ---------- */
   const heroLines = document.querySelectorAll('[data-hero-line]');
   heroLines.forEach((el, n) => setTimeout(() => el.classList.add('is-in'), reduce ? 0 : 120 + n * 90));
