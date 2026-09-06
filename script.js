@@ -118,6 +118,37 @@
     }
   }
 
+  /* ---------- 7.5. Окно контактов: любая кнопка связи ---------- */
+  (function () {
+    const modal = document.getElementById('cmodal');
+    if (!modal) return;
+    const tg = document.getElementById('cmodal-tg');
+    const note = document.getElementById('cmodal-note');
+    let lastFocus = null;
+    const open = (href) => {
+      if (tg) tg.href = href || 'https://t.me/shabb1on';
+      note.textContent = '';
+      lastFocus = document.activeElement;
+      modal.hidden = false; document.body.style.overflow = 'hidden';
+      const first = modal.querySelector('.cmodal__item'); if (first) first.focus();
+    };
+    const close = () => { modal.hidden = true; document.body.style.overflow = ''; if (lastFocus && lastFocus.focus) lastFocus.focus(); };
+    document.querySelectorAll('a[href^="https://t.me/"]').forEach((a) => {
+      if (a.closest('.cmodal')) return;
+      a.addEventListener('click', (e) => { e.preventDefault(); open(a.getAttribute('href')); });
+    });
+    modal.querySelectorAll('[data-cmodal-close]').forEach((el) => el.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
+    const copyBtn = modal.querySelector('[data-copy]');
+    if (copyBtn) copyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const num = copyBtn.dataset.copy;
+      const done = () => { note.textContent = 'Номер скопирован. Откройте MAX и найдите меня по номеру.'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(num).then(done, done);
+      else { const t = document.createElement('textarea'); t.value = num; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (err) {} t.remove(); done(); }
+    });
+  })();
+
   /* ---------- 8. Якоря с отступом под шапку ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
