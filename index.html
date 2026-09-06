@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дмитрий Салтыков — операционка и учёт на ИИ-агентах</title>
+<meta name="description" content="Операционный директор компании с выручкой 500 млн. Перевёл учёт, контроль сделок и закрытие месяца на 56 ИИ-агентов. Делаю то же для других: от баланса до заявок с сайта.">
+<meta property="og:title" content="Дмитрий Салтыков — рутина, до которой не доходят руки, стоит денег">
+<meta property="og:description" content="56 агентов в продакшене. Баланс, контроль сделок, закупки, заявки, документы. Два формата: погружение или развёртывание без доступа к данным.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=Golos+Text:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230B1424%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2730%27 fill=%27%23C4712F%27 text-anchor=%27middle%27%3E%D0%94%D0%A1%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://saltykovd03-create.github.io/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<!-- Блок 1. Хедер -->
+<header class="header" id="top">
+  <div class="container header__in">
+    <a href="#top" class="header__name">Дмитрий Салтыков</a>
+    <nav class="header__nav" aria-label="Разделы">
+      <a href="#why">Почему сейчас</a>
+      <a href="#start">С чего начать</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#any">Идеи</a>
+      <a href="#formats">Форматы</a>
+    </nav>
+    <a href="https://t.me/shabb1on" class="btn btn--sm btn--copper" target="_blank" rel="noopener">Написать в Telegram</a>
+  </div>
+</header>
+
+<!-- Блок 2. Hero -->
+<section class="hero" aria-label="Главный экран">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__text">
+      <p class="eyebrow eyebrow--light" data-hero-line>Операционный директор · агенты для учёта и процессов</p>
+      <h1 class="hero__h1">
+        <span class="line" data-hero-line>Рутина, до которой</span>
+        <span class="line" data-hero-line>не доходят руки,</span>
+        <span class="line line--em" data-hero-line>стоит денег.</span>
+      </h1>
+      <p class="hero__lead" data-hero-line>Я нахожу, сколько именно, и убираю её агентами, которые работают каждый день без меня. Проверено на компании с выручкой 500 млн в год. Теперь делаю это для других.</p>
+      <p class="hero__cold" data-hero-line><b>Если вам прислали эту ссылку:</b> ниже шесть задач, которые я снимаю за неделю на ваших данных, пять кейсов с настоящими цифрами и два формата работы, включая вариант без доступа к вашим данным. Чтение 4 минуты, обязательств никаких.</p>
+      <div class="hero__cta" data-hero-line>
+        <a href="#start" class="btn btn--copper">Что можно снять за неделю</a>
+        <a href="https://t.me/shabb1on" class="btn btn--ghost" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+      <dl class="hero__facts" data-hero-line>
+        <div><dt>56</dt><dd>агентов в продакшене</dd></div>
+        <div><dt>6 нед.</dt><dd>от первого коммита до 56 проектов</dd></div>
+        <div><dt>1–2 дня</dt><dd>новый агент до продакшена</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__log" aria-label="Что делают агенты в обычный день">
+      <div class="log">
+        <div class="log__bar"><span></span><span></span><span></span><em>агенты · обычный понедельник</em></div>
+        <ol class="log__lines" id="log"></ol>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- Блок 3. Лист, наезжающий на hero -->
+<main class="sheet">
+
+  <!-- Блок 3.1. Бегущая строка -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>сверил активные сделки с платежами</span><i>·</i>
+      <span>собрал авансы клиентов в баланс</span><i>·</i>
+      <span>разнёс банковскую выписку по статьям</span><i>·</i>
+      <span>прочитал счёт поставщика из чата</span><i>·</i>
+      <span>прислал сводку в отдел продаж</span><i>·</i>
+      <span>посчитал просрочки поставщиков</span><i>·</i>
+      <span>разобрал договор по пунктам</span><i>·</i>
+      <span>выставил счёт между направлениями</span><i>·</i>
+      <span>сверил активные сделки с платежами</span><i>·</i>
+      <span>собрал авансы клиентов в баланс</span><i>·</i>
+      <span>разнёс банковскую выписку по статьям</span><i>·</i>
+      <span>прочитал счёт поставщика из чата</span><i>·</i>
+      <span>прислал сводку в отдел продаж</span><i>·</i>
+      <span>посчитал просрочки поставщиков</span><i>·</i>
+      <span>разобрал договор по пунктам</span><i>·</i>
+      <span>выставил счёт между направлениями</span><i>·</i>
+    </div>
+  </div>
+
+  <!-- Блок 4. Почему сейчас -->
+  <section class="section why" id="why">
+    <div class="container">
+      <p class="eyebrow" data-reveal>Почему сейчас, а не «когда-нибудь»</p>
+      <div class="why__beats">
+        <article class="beat" data-reveal>
+          <span class="beat__n">01</span>
+          <h2 class="beat__h">Работа теперь измеряется токенами, а не часами. И дешевеет.</h2>
+          <p>Модели обновляются каждые несколько месяцев. То, что вчера требовало программиста и двух недель, сегодня задача на вечер. Это не будущее, это цена, которую уже платит тот, кто начал.</p>
+        </article>
+        <article class="beat" data-reveal>
+          <span class="beat__n">02</span>
+          <h2 class="beat__h">В большинстве компаний история останавливается на подписке.</h2>
+          <p>Купили, попробовали написать письмо, сделали пару картинок. Никто не перевёл это в процесс: чтобы агент сам читал CRM, сам сверял деньги, сам отвечал на заявки ночью, сам собирал отчёт к понедельнику. Разница между «попробовали» и «работает без нас» не в инструменте. Она в человеке, который это уже делал на живых данных.</p>
+        </article>
+        <article class="beat" data-reveal>
+          <span class="beat__n">03</span>
+          <h2 class="beat__h">Разрыв растёт быстрее, чем кажется.</h2>
+          <p>Компания, где кто-то построил контур, через год ведёт учёт, продажи и поддержку вдвое меньшим числом людей. Компания, где не построил, конкурирует с ней по цене. И третий сценарий, о котором редко говорят: ваш сотрудник, который разобрался сам, через полгода либо ваш главный актив, либо конкурент с вашей клиентской базой в голове.</p>
+        </article>
+      </div>
+      <p class="why__out" data-reveal>Поэтому сейчас важно не «изучать ИИ», а один раз поговорить с человеком, который довёл это до продакшена, и понять, что именно у вас можно снять за неделю. Дальше вы решите: со мной, самим или никак.</p>
+    </div>
+  </section>
+
+  <!-- Блок 5. С чего начинают: стопка карточек -->
+  <section class="section start" id="start">
+    <div class="container start__head">
+      <div>
+        <p class="eyebrow" data-reveal>С чего обычно начинают</p>
+        <h2 class="h2" data-reveal>Шесть задач, которые почти всегда <span class="em">находят деньги или время</span></h2>
+      </div>
+      <p class="lead" data-reveal data-delay="0.1">Каждая делается за несколько дней на ваших данных. Листайте и выберите свою.</p>
+    </div>
+
+    <div class="container stack">
+
+      <article class="card card--navy" data-stack-card>
+        <div class="card__veil" data-stack-veil aria-hidden="true"></div>
+        <div class="card__in">
+          <div class="card__meta"><span class="card__n">01</span><span class="chip">Собственнику</span></div>
+          <h3 class="card__h">Сколько у компании денег прямо сейчас, и кому вы что должны</h3>
+          <p class="card__lead">Счета, касса, авансы клиентов, долги поставщикам и товар в пути в одной таблице, которая обновляется сама. Не раз в месяц от бухгалтера, а каждое утро.</p>
+          <ul class="card__list">
+            <li>Баланс сходится построчно, у каждой цифры формула и ссылка на источник</li>
+            <li>Отдельно: аудит рутины по отделам, что снять первым и сколько это стоит в месяц</li>
+          </ul>
+          <div class="card__foot">
+            <span class="card__cta">Соберу ежедневный баланс на ваших данных за неделю</span>
+            <a href="https://t.me/shabb1on?text=Хочу%20ежедневный%20баланс" class="btn btn--paper" target="_blank" rel="noopener">Обсудить</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--paper" data-stack-card>
+        <div class="card__veil" data-stack-veil aria-hidden="true"></div>
+        <div class="card__in">
+          <div class="card__meta"><span class="card__n">02</span><span class="chip">Продажам и маркетингу</span></div>
+          <h3 class="card__h">Сделки, по которым недополучены деньги, и каналы, которые их приносят</h3>
+          <p class="card__lead">Агент проходит все активные сделки, сверяет обещанное с поступившим и раз в неделю присылает список: где не хватает, сколько и с какой даты. Маркетологу та же цепочка в обратную сторону: реклама, заявки, CRM, оплаты, и цена клиента по каналу до денег, а не до лида.</p>
+          <ul class="card__list">
+            <li>Сводка в чат отдела продаж без участия человека</li>
+            <li>Раз в неделю: что отключить в рекламе и куда добавить</li>
+          </ul>
+          <div class="card__foot">
+            <span class="card__cta">Прогоню ваши активные сделки и покажу первый список</span>
+            <a href="https://t.me/shabb1on?text=Хочу%20проверить%20сделки" class="btn btn--ink" target="_blank" rel="noopener">Обсудить</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--sand" data-stack-card>
+        <div class="card__veil" data-stack-veil aria-hidden="true"></div>
+        <div class="card__in">
+          <div class="card__meta"><span class="card__n">03</span><span class="chip">Финансовому директору</span></div>
+          <h3 class="card__h">Сверка CRM, банка и управленческого учёта</h3>
+          <p class="card__lead">Три системы, три цифры выручки. Нахожу, где расходятся и почему, и ставлю автоматическое разнесение банковских операций по статьям и направлениям.</p>
+          <ul class="card__list">
+            <li>Расхождения построчно за последний закрытый месяц</li>
+            <li>Курсовые разницы, авансы, возвраты и трейд-ин учтены отдельно, а не «примерно»</li>
+          </ul>
+          <div class="card__foot">
+            <span class="card__cta">Сделаю сверку за месяц и покажу расхождения построчно</span>
+            <a href="https://t.me/shabb1on?text=Хочу%20сверку%20учёта" class="btn btn--ink" target="_blank" rel="noopener">Обсудить</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--navy" data-stack-card>
+        <div class="card__veil" data-stack-veil aria-hidden="true"></div>
+        <div class="card__in">
+          <div class="card__meta"><span class="card__n">04</span><span class="chip">Закупкам и логистике</span></div>
+          <h3 class="card__h">Кто из поставщиков сорвал сроки и сколько это стоило</h3>
+          <p class="card__lead">Просрочки по каждой партии от изначального плана, замороженные деньги, потерянная маржа по отказам клиентов. Готовый расчёт для разговора с поставщиком или претензии.</p>
+          <ul class="card__list">
+            <li>Счета из чатов читаются и попадают в учёт сами</li>
+            <li>Расчёт в формате, который принимает юрист</li>
+          </ul>
+          <div class="card__foot">
+            <span class="card__cta">Посчитаю просрочки по вашим поставкам за квартал</span>
+            <a href="https://t.me/shabb1on?text=Хочу%20расчёт%20просрочек" class="btn btn--paper" target="_blank" rel="noopener">Обсудить</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--paper" data-stack-card>
+        <div class="card__veil" data-stack-veil aria-hidden="true"></div>
+        <div class="card__in">
+          <div class="card__meta"><span class="card__n">05</span><span class="chip">Бизнесу с сайтом, услугам, производству</span></div>
+          <h3 class="card__h">Заявка получает ответ за минуту, документы отвечают сами</h3>
+          <p class="card__lead">Ремонт, стройка, сервис, производство: заявки приходят ночью и в выходные, а отвечают в понедельник. Бот квалифицирует заявку, отвечает клиенту, ставит задачу мастеру и напоминает, если её не взяли. Для услуг с регламентами и прайсами: бот на вашей базе знаний отвечает сотрудникам и клиентам, готовит КП по шаблону, проверяет договоры на отклонения от вашего стандарта.</p>
+          <ul class="card__list">
+            <li>Сайт и мессенджеры подключены к CRM за три дня</li>
+            <li>Один договор разбирается на риски за час, список на одной странице</li>
+          </ul>
+          <div class="card__foot">
+            <span class="card__cta">Подключу заявки к CRM с автоответом или соберу базу знаний</span>
+            <a href="https://t.me/shabb1on?text=Хочу%20заявки%20с%20сайта%20в%20CRM" class="btn btn--ink" target="_blank" rel="noopener">Обсудить</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--copper" data-stack-card>
+        <div class="card__veil" data-stack-veil aria-hidden="true"></div>
+        <div class="card__in">
+          <div class="card__meta"><span class="card__n">06</span><span class="chip">Руководителю, который тонет в переписке</span></div>
+          <h3 class="card__h">Сводка по чатам и встречам вместо чтения всего. И ваш «шарящий» сотрудник как актив</h3>
+          <p class="card__lead">Агент читает рабочие чаты и записи встреч и к утру присылает: что решили, кто что обещал и к какому сроку, что зависло. А если в команде уже есть человек, который разобрался в ИИ сам, даю ему инфраструктуру и правила, чтобы его знания стали процессом компании, а не его личным преимуществом.</p>
+          <ul class="card__list">
+            <li>Три чата подключаются за день, задачи уходят в планировщик сами</li>
+            <li>Через месяц ваш сотрудник заводит новых агентов без меня</li>
+          </ul>
+          <div class="card__foot">
+            <span class="card__cta">Подключу три ваших чата и пришлю первую утреннюю сводку</span>
+            <a href="https://t.me/shabb1on?text=Хочу%20сводку%20по%20чатам" class="btn btn--paper" target="_blank" rel="noopener">Обсудить</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Блок 6. Кейсы: аккордеон -->
+  <section class="section cases" id="cases">
+    <div class="container">
+      <div class="cases__head">
+        <div>
+          <p class="eyebrow" data-reveal>Что уже сделано</p>
+          <h2 class="h2" data-reveal>Пять кейсов <span class="em">из одной компании</span></h2>
+        </div>
+        <p class="lead" data-reveal data-delay="0.1">Розница и сервис, два юрлица, выручка около 500 млн в год, Битрикс24 как CRM, Финтабло как учёт. Название не привожу по договорённости, цифры настоящие. Нажмите, чтобы раскрыть.</p>
+      </div>
+
+      <div class="acc" data-acc>
+
+        <article class="acc__item" data-reveal>
+          <button class="acc__btn" aria-expanded="true" aria-controls="c1">
+            <span class="acc__num">7–8 млн</span>
+            <span class="acc__title">Баланс, который сходится каждый месяц</span>
+            <span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="c1">
+            <div class="acc__grid">
+              <p><b>Было.</b> Активы и пассивы расходились на 7–8 млн, причину искали вручную по несколько дней каждый месяц.</p>
+              <p><b>Сделал.</b> Разобрал сбор баланса по источникам: банк, CRM, склад, авансы клиентов, долги поставщикам, курсовые разницы. Нашёл, что «живые» авансы на 32,7 млн были по закрытым сделкам, которые в CRM выглядели активными. Написал методику и агента, который в последний день месяца собирает авансы сам и дважды перепроверяет их на следующий день.</p>
+              <p class="acc__res"><b>Стало.</b> Расхождение объяснено построчно, сбор авансов больше не делается руками, у каждой цифры формула и ссылка.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="acc__item" data-reveal>
+          <button class="acc__btn" aria-expanded="false" aria-controls="c2">
+            <span class="acc__num">−390 тыс.</span>
+            <span class="acc__title">Контроль сделок каждый понедельник</span>
+            <span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="c2" hidden>
+            <div class="acc__grid">
+              <p><b>Было.</b> Сделки закрывались «успехом» по регламенту, но деньги по части из них не доходили, и это замечали через месяцы.</p>
+              <p><b>Сделал.</b> Агент раз в неделю проходит активные сделки, считает деньги чистыми по фактическим платежам, а не по полю в карточке, сверяет себестоимость и допы, проверяет договор и присылает руководителю продаж сводку: чисто, спорно, разобрать. Нашёл сделку, которая выпала из учёта целиком: минус 390 тысяч маржи месяца.</p>
+              <p class="acc__res"><b>Стало.</b> Сводка в чат отдела продаж без человека, накопительный реестр отклонений, сроки по видам покупки.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="acc__item" data-reveal>
+          <button class="acc__btn" aria-expanded="false" aria-controls="c3">
+            <span class="acc__num">0 ручных</span>
+            <span class="acc__title">Учёт закупок и платежей из чатов</span>
+            <span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="c3" hidden>
+            <div class="acc__grid">
+              <p><b>Было.</b> Счета поставщиков и платежи по кошелькам без выписок фиксировались в мессенджерах и переносились в таблицы вручную.</p>
+              <p><b>Сделал.</b> Бот читает счёт из чата, распознаёт позиции и суммы, заводит запись в учёт и подтверждает карточкой. Второй бот ведёт платежи из чата логистики: выдерживает паузу, пока человек не дописал, и сводит всё в одну запись. Правки владельца вносятся в тот же день.</p>
+              <p class="acc__res"><b>Стало.</b> Ручной перенос убран, история операций восстанавливается из чата, ошибки видны в день возникновения.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="acc__item" data-reveal>
+          <button class="acc__btn" aria-expanded="false" aria-controls="c4">
+            <span class="acc__num">806 сделок</span>
+            <span class="acc__title">Воронки, мотивация и расчёты, которые делали в Excel по ночам</span>
+            <span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="c4" hidden>
+            <div class="acc__grid">
+              <p><b>Было.</b> Воронка на 806 «повторных продаж», которую никто не мог разобрать. Сдельная оплата механиков, счета между направлениями и коэффициенты за выдачу техники считались руками.</p>
+              <p><b>Сделал.</b> Разложил 806 сделок по правилам за один день, 177 спорных ушли людям. Перевёл расчёты на данные CRM: этапы работ по каждой единице техники, себестоимость услуг по грейду исполнителя, автоматические счета одного направления другому. Плюс пульт руководителя: три блока денег и все обязательства на одном экране.</p>
+              <p class="acc__res"><b>Стало.</b> Зарплата и взаиморасчёты идут из CRM, а не из памяти руководителя. Нашёл, что 13 автопроцессов переписывали одну сделку 12 раз при каждом сохранении.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="acc__item" data-reveal>
+          <button class="acc__btn" aria-expanded="false" aria-controls="c5">
+            <span class="acc__num">56 агентов</span>
+            <span class="acc__title">Инфраструктура, которая переносится на другую компанию</span>
+            <span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="c5" hidden>
+            <div class="acc__grid">
+              <p><b>Было.</b> Агентов нужно где-то запускать, обновлять, хранить ключи и следить за расходами. Каждый новый бот заводился с нуля.</p>
+              <p><b>Сделал.</b> Один репозиторий, сервер, сборка по пул-реквесту, бот-«привратник», который проверяет секреты и раскатывает проекты, единый пул ключей к моделям с автоматической заменой при отказе, дашборд расходов на ИИ в день. Собрано за шесть недель и задокументировано.</p>
+              <p class="acc__res"><b>Стало.</b> Новый агент от идеи до продакшена за один-два дня. Именно этот контур я разворачиваю у других.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 6.5. Возможно всё -->
+  <section class="section any" id="any">
+    <div class="container any__grid">
+      <div>
+        <p class="eyebrow" data-reveal>А если задача не из списка</p>
+        <h2 class="any__h" data-reveal>Что бы вы ни придумали, это либо уже возможно, либо будет через месяц.</h2>
+        <p class="any__p" data-reveal>Своё приложение, сайт под рекламу, бот, который отвечает клиентам голосом, презентация, которая собирается сама, отчёт, который приходит на телефон. Всё, что связано с экраном в вашей руке, теперь делается быстро. Я либо научу вас и вашу команду, либо сделаю сам.</p>
+        <div class="any__cta" data-reveal>
+          <a href="https://t.me/shabb1on?text=Есть%20идея%2C%20хочу%20обсудить" class="btn btn--copper" target="_blank" rel="noopener">Обсудить идею</a>
+          <small>Созвон 30 минут, ни к чему не обязывает. Если идея не взлетит, скажу сразу и почему.</small>
+        </div>
+      </div>
+      <div>
+        <ul class="any__list" data-reveal>
+          <li><span>01</span>Своё приложение или личный кабинет для клиентов</li>
+          <li><span>02</span>Сайт или лендинг под рекламу, с аналитикой с первого дня</li>
+          <li><span>03</span>Бот в Telegram или MAX, который продаёт, записывает, напоминает</li>
+          <li><span>04</span>Голосовой помощник на входящих звонках и заявках</li>
+          <li><span>05</span>Отчёт для собственника, который сам приходит утром в телефон</li>
+          <li><span>06</span>Презентация, КП, договор по шаблону за минуты, а не за вечер</li>
+          <li><span>07</span>Расшифровка встреч и звонков с задачами и сроками</li>
+          <li><span>08</span>Обучение команды: кто что делает с ИИ и по каким правилам</li>
+        </ul>
+        <div class="any__two" data-reveal data-delay="0.1">
+          <div><h3>Научу</h3><p>Разбираем вашу задачу вместе, вы уходите с работающим инструментом и понимаете, как его менять.</p></div>
+          <div><h3>Сделаю</h3><p>Вы описываете, что нужно, и через неделю смотрите результат. Дальше решаем, вести это мне или вам.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 7. Форматы и уровни -->
+  <section class="section formats" id="formats">
+    <div class="container">
+      <p class="eyebrow" data-reveal>Два формата работы</p>
+      <h2 class="h2" data-reveal>С доступом к данным <span class="em">или без него</span></h2>
+
+      <div class="formats__grid">
+        <article class="fmt fmt--ink" data-reveal>
+          <span class="fmt__n">Формат 1</span>
+          <h3>Погружение</h3>
+          <p>Я захожу в ваши системы, разбираю данные и вместе с агентами делаю задачу до результата. Подходит, когда нужен ответ, а не инструмент.</p>
+          <ul>
+            <li>Доступ к CRM, учёту и таблицам под NDA</li>
+            <li>Первый результат за 3–7 дней</li>
+            <li>После задачи остаётся работающий агент и методика</li>
+          </ul>
+        </article>
+        <article class="fmt fmt--paper" data-reveal data-delay="0.1">
+          <span class="fmt__n">Формат 2</span>
+          <h3>Развёртывание</h3>
+          <p>Я ставлю систему в вашем контуре, обучаю вашего человека и не вижу ваших данных. Подходит, когда данные конфиденциальны или вы хотите разобраться сами.</p>
+          <ul>
+            <li>Инфраструктура на ваш сервер и ваши аккаунты</li>
+            <li>Оплата за работу по развёртыванию, подписки и сервер по себестоимости</li>
+            <li>Четыре уровня сложности, ниже</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="levels" data-levels data-reveal>
+        <div class="levels__tabs" role="tablist" aria-label="Уровни развёртывания">
+          <button role="tab" aria-selected="true" aria-controls="l1" id="t1">Старт</button>
+          <button role="tab" aria-selected="false" aria-controls="l2" id="t2">Сервер</button>
+          <button role="tab" aria-selected="false" aria-controls="l3" id="t3">Пульт</button>
+          <button role="tab" aria-selected="false" aria-controls="l4" id="t4">Контур</button>
+        </div>
+        <div class="levels__panels">
+          <div role="tabpanel" id="l1" aria-labelledby="t1">
+            <h4>Подписки и рабочее место</h4>
+            <p>Подбор и покупка подписок, настройка рабочего места, два часа обучения на ваших задачах: договоры, таблицы, переписка.</p>
+            <span class="levels__for">Руководителю, который хочет сам</span>
+          </div>
+          <div role="tabpanel" id="l2" aria-labelledby="t2" hidden>
+            <h4>Сервер и первый агент</h4>
+            <p>Арендованный сервер, репозиторий, сборка по пул-реквесту, хранилище ключей, первый агент по расписанию. Боты и автоматизации работают без человека.</p>
+            <span class="levels__for">Компании, где нужны боты и автоматизации</span>
+          </div>
+          <div role="tabpanel" id="l3" aria-labelledby="t3" hidden>
+            <h4>Дашборды на живых данных</h4>
+            <p>Деньги, сделки и обязательства на живых данных CRM и учёта, с методикой у каждой цифры: формула, источник, ссылка.</p>
+            <span class="levels__for">Собственнику и финансовому директору</span>
+          </div>
+          <div role="tabpanel" id="l4" aria-labelledby="t4" hidden>
+            <h4>Всё вместе плюс регламент</h4>
+            <p>Сервер, агенты, дашборды и правила, по которым ваша команда сама заводит новых агентов. Через месяц контур живёт без меня.</p>
+            <span class="levels__for">Компании, которая хочет иметь это внутри</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 8. Инструменты и принципы -->
+  <section class="section tools" id="tools">
+    <div class="container tools__grid">
+      <div>
+        <p class="eyebrow" data-reveal>Инструменты</p>
+        <dl class="tools__list" data-reveal>
+          <div><dt>CRM и учёт</dt><dd>Битрикс24 REST и бизнес-процессы, Финтабло API включая недокументированные методы, 1С по выгрузкам</dd></div>
+          <div><dt>Данные</dt><dd>Google Sheets API, банковские выписки, Telegram-чаты как источник, PDF-счета</dd></div>
+          <div><dt>Агенты</dt><dd>Claude Code, Claude API через OpenRouter, Python, Docker, планировщики, Telegram-боты</dd></div>
+          <div><dt>Инфраструктура</dt><dd>VDS, Caddy, GitHub с проверкой пул-реквестов, 1Password для секретов, пул ключей с резервом</dd></div>
+          <div><dt>Финансы</dt><dd>Баланс, ОПиУ, ДДС, план-факт по отделам, финмодели, план выплат инвесторам</dd></div>
+        </dl>
+      </div>
+      <div>
+        <p class="eyebrow" data-reveal>Как я работаю</p>
+        <ol class="principles" data-reveal>
+          <li><span><b>У каждой цифры методика.</b> Формула, источник, ссылка. Если цифру нельзя проверить, её нет.</span></li>
+          <li><span><b>Сначала нахожу, потом автоматизирую.</b> Первый результат это список расхождений, а не презентация про ИИ.</span></li>
+          <li><span><b>Точечные правки.</b> Не переписываю ваши таблицы и процессы целиком. Чиню то, что сломано.</span></li>
+          <li><span><b>Ошибки документирую.</b> Ловушки ваших систем записываются, чтобы агент не наступил на них второй раз.</span></li>
+          <li><span><b>Ваши данные ваши.</b> Ключи и доступы живут у вас и отзываются одной кнопкой.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 9. Контакт -->
+  <section class="section contact" id="contact">
+    <div class="container contact__in">
+      <p class="eyebrow eyebrow--light" data-reveal>Один разговор на 30 минут</p>
+      <h2 class="contact__h" data-reveal>Расскажите, какая задача лежит у вас дольше всего.</h2>
+      <p class="contact__p" data-reveal>Я скажу, что из неё можно вытащить за неделю и сколько это будет стоить. Если нечего, скажу это тоже.</p>
+      <div class="contact__btns" data-reveal>
+        <a href="https://t.me/shabb1on" class="btn btn--copper btn--lg" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a href="tel:+79027045877" class="btn btn--ghost btn--lg">+7 902 704-58-77</a>
+      </div>
+      <p class="contact__small" data-reveal>Дмитрий Салтыков · Москва · @shabb1on</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Блок 10. Футер -->
+<footer class="footer">
+  <div class="container footer__in">
+    <span>Кейсы приведены с согласия компании, названия и имена не раскрываются. Цифры на сентябрь 2026.</span>
+    <a href="#top">Наверх</a>
+  </div>
+</footer>
+
+<!-- Sticky CTA на мобильных -->
+<a href="https://t.me/shabb1on" class="sticky-cta" target="_blank" rel="noopener">Написать в Telegram</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js?v=3"></script>
+</body>
+</html>

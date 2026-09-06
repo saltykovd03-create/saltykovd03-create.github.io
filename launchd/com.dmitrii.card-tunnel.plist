@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.dmitrii.card-tunnel</string>
+  <key>ProgramArguments</key><array>
+    <string>/Users/dmitrii/.local/bin/cloudflared</string><string>tunnel</string><string>--no-autoupdate</string>
+    <string>--url</string><string>http://127.0.0.1:8031</string>
+  </array>
+  <key>RunAtLoad</key><true/><key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>/tmp/card-tunnel.log</string><key>StandardErrorPath</key><string>/tmp/card-tunnel.log</string>
+</dict></plist>

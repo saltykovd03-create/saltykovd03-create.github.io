@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Скрипт лежит в ~/Library/Application Support: launchd не читает Desktop. -->
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.dmitrii.card-watchdog</string>
+  <key>ProgramArguments</key><array>
+    <string>/bin/bash</string>
+    <string>/Users/dmitrii/Library/Application Support/saltykov-card/watchdog.sh</string>
+  </array>
+  <key>StartInterval</key><integer>60</integer>
+  <key>RunAtLoad</key><true/>
+  <key>StandardOutPath</key><string>/tmp/card-watchdog.log</string>
+  <key>StandardErrorPath</key><string>/tmp/card-watchdog.log</string>
+</dict></plist>

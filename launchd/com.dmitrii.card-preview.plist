@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.dmitrii.card-preview</string>
+  <key>ProgramArguments</key><array><string>/usr/bin/python3</string><string>/Users/dmitrii/Library/Application Support/saltykov-card/serve.py</string><string>8031</string></array>
+  <key>WorkingDirectory</key><string>/Users/dmitrii/Library/Application Support/saltykov-card</string>
+  <key>RunAtLoad</key><true/><key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>/tmp/card-preview.log</string><key>StandardErrorPath</key><string>/tmp/card-preview.log</string>
+</dict></plist>
