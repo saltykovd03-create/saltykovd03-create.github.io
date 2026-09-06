@@ -4,6 +4,6 @@ set -e
 cd "$(dirname "$0")"
 DEST="$HOME/Library/Application Support/saltykov-card"
 mkdir -p "$DEST"
-cp -r index.html style.css script.js serve.py og.png fonts js "$DEST/"
+cp -r index.html style.css script.js serve.py og.png fonts js v "$DEST/"
 echo "✓ рабочая копия обновлена: $DEST"
 cat "$DEST/PUBLIC-URL.txt" 2>/dev/null || grep -o 'https://[a-z0-9-]*-[a-z0-9-]*\.trycloudflare\.com' /tmp/card-tunnel.log | tail -1

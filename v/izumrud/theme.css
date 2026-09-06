@@ -1,0 +1,10 @@
+:root {
+  --navy: #0F2B26; --navy-2: #16382F; --paper: #F3F2EC; --paper-2: #E8E6DC; --sand: #DDE3D2;
+  --ink: #12201C; --ink-2: #37483F; --muted: #6B7268;
+  --line: color-mix(in srgb, #12201C 12%, transparent); --line-light: color-mix(in srgb, #F3F2EC 16%, transparent);
+  --copper: #D9A441; --copper-2: #B9862B; --copper-glow: #EBBA5C; --steel: #7FC8B0;
+  --robot-body: #1C3A33; --robot-ear: #244A40; --robot-screen: #0B1C18;
+}
+.variant-tag { position: fixed; left: 14px; bottom: 14px; z-index: 70; padding: 8px 12px; border-radius: 999px; background: var(--ink); color: var(--paper); font-family: var(--font-mono); font-size: 12px; opacity: .9; }
+.variant-tag a { color: var(--copper); }
+@media (max-width: 640px) { .variant-tag { bottom: 72px; } }
