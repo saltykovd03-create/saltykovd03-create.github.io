@@ -14,7 +14,9 @@
     ['08:31', '2 списания без статьи, отправил на разбор', 'warn'],
     ['09:00', 'контроль сделок: 118 активных, 3 спорных', 'warn'],
     ['09:01', 'сводка ушла в чат отдела продаж', 'ok'],
+    ['10:15', 'квалификатор: 9 диалогов, 2 горячих переданы', 'ok'],
     ['11:30', 'повторная проверка авансов после выдачи', 'ok'],
+    ['12:00', 'договор в сделке 2141: правок нет, сходится с шаблоном', 'ok'],
     ['14:10', 'счёт поставщика из чата: 7 позиций, в учёт', 'ok'],
     ['18:00', 'просрочки поставок: 2 партии, +9 дней', 'warn'],
     ['23:00', 'закрытие дня, отчёт руководителю', 'ok'],
@@ -101,50 +103,6 @@
         scrollTrigger: { trigger: '.sheet', start: 'top bottom', end: 'top top', scrub: true } });
     }
   }
-
-  /* ---------- 6. Аккордеон кейсов ---------- */
-  document.querySelectorAll('[data-acc]').forEach((root) => {
-    const btns = root.querySelectorAll('.acc__btn');
-    const setOpen = (btn, open) => {
-      const panel = document.getElementById(btn.getAttribute('aria-controls'));
-      btn.setAttribute('aria-expanded', String(open));
-      if (!panel) return;
-      if (reduce) { panel.hidden = !open; return; }
-      if (open) {
-        panel.hidden = false;
-        const h = panel.scrollHeight;
-        panel.style.height = '0px';
-        requestAnimationFrame(() => {
-          panel.style.transition = 'height .5s cubic-bezier(.16,1,.3,1)';
-          panel.style.height = h + 'px';
-          panel.addEventListener('transitionend', () => { panel.style.height = ''; panel.style.transition = ''; if (window.ScrollTrigger) ScrollTrigger.refresh(); }, { once: true });
-        });
-      } else {
-        panel.style.height = panel.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          panel.style.transition = 'height .4s cubic-bezier(.16,1,.3,1)';
-          panel.style.height = '0px';
-          panel.addEventListener('transitionend', () => { panel.hidden = true; panel.style.height = ''; panel.style.transition = ''; if (window.ScrollTrigger) ScrollTrigger.refresh(); }, { once: true });
-        });
-      }
-    };
-    btns.forEach((btn) => btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      btns.forEach((b) => { if (b !== btn && b.getAttribute('aria-expanded') === 'true') setOpen(b, false); });
-      setOpen(btn, !isOpen);
-    }));
-  });
-
-  /* ---------- 7. Вкладки уровней ---------- */
-  document.querySelectorAll('[data-levels]').forEach((root) => {
-    const tabs = root.querySelectorAll('[role="tab"]');
-    const panels = root.querySelectorAll('[role="tabpanel"]');
-    tabs.forEach((tab) => tab.addEventListener('click', () => {
-      tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
-      panels.forEach((p) => { p.hidden = p.id !== tab.getAttribute('aria-controls'); });
-      if (window.ScrollTrigger) ScrollTrigger.refresh();
-    }));
-  });
 
   /* ---------- 8. Якоря с отступом под шапку ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
