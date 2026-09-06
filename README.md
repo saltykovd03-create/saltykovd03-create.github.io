@@ -3,7 +3,13 @@
 Статика по плейбуку sites-playbook: `index.html` + `style.css` + `script.js`, без сборки.
 GSAP ScrollTrigger с cdnjs для стопки карточек, шрифты Google Fonts (Geologica / Golos Text / IBM Plex Mono).
 
-## Публичное превью
+## Публичный адрес
+
+**https://saltykovd03-create.github.io/** — GitHub Pages из репозитория `saltykovd03-create/saltykovd03-create.github.io`
+(личный аккаунт). Публикация: `git add <файлы> && git commit && git push`, сайт обновляется за минуту.
+Шрифты и GSAP лежат внутри (`fonts/`, `js/`): Cloudflare и Google из России открываются не всегда.
+
+## Локальное превью (запасной туннель)
 
 Тот же контур, что у Посновой и Высоты29: локальный сервер на порту 8031 из рабочей копии
 `~/Library/Application Support/saltykov-card` (launchd не может читать Desktop), cloudflared quick tunnel,
