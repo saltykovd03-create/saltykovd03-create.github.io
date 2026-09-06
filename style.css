@@ -50,6 +50,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .h2 { font-size: clamp(30px, 4.2vw, 52px); line-height: 1.04; font-weight: 600; }
 .em { color: var(--copper); }
 .lead { font-size: clamp(17px, 1.4vw, 20px); line-height: 1.5; color: var(--ink-2); max-width: 70ch; margin-top: 14px; }
+.lead--wide { max-width: none; }
 
 /* ============ 1. Кнопки ============ */
 .btn {
@@ -89,7 +90,7 @@ html.js .header.is-scrolled { opacity: 1; transform: none; pointer-events: auto;
 /* ============ 3. Hero ============ */
 .hero {
   position: sticky; top: 0; min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
-  padding: 28px 0 88px; color: var(--paper); overflow: hidden; z-index: 1;
+  padding: 24px 0 88px; color: var(--paper); overflow: hidden; z-index: 1; justify-content: flex-start;
 }
 .hero__bg {
   position: absolute; inset: 0; z-index: -1;
@@ -103,7 +104,8 @@ html.js .header.is-scrolled { opacity: 1; transform: none; pointer-events: auto;
   background-image: linear-gradient(var(--line-light) 1px, transparent 1px), linear-gradient(90deg, var(--line-light) 1px, transparent 1px);
   background-size: 96px 96px; mask-image: radial-gradient(ellipse at 60% 40%, #000 30%, transparent 75%);
 }
-.hero__top { display: flex; justify-content: flex-end; margin-bottom: 8px; width: min(1180px, 100% - 40px); }
+.hero__top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; width: min(1180px, 100% - 40px); }
+.hero__top .eyebrow { margin: 0; }
 @media (max-width: 640px) { .hero__top { width: min(1180px, 100% - 32px); } }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: center; }
 .hero__side { display: flex; flex-direction: column; gap: 18px; }
@@ -137,10 +139,12 @@ html.js .header.is-scrolled { opacity: 1; transform: none; pointer-events: auto;
 .log__lines time { color: var(--steel); }
 .log__lines .ok { color: #8BD3A5; }
 .log__lines .warn { color: #E9B872; }
-.hero__scroll { position: absolute; left: 50%; bottom: 26px; width: 1px; height: 44px; background: var(--line-light); overflow: hidden; }
+.hero__scroll { position: absolute; left: 50%; bottom: 22px; width: 1px; height: 44px; background: var(--line-light); }
+.hero__scroll span { overflow: hidden; }
+.hero__scroll em { position: absolute; left: 12px; bottom: 0; font-style: normal; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: rgba(243,240,234,.55); white-space: nowrap; }
 .hero__scroll span { position: absolute; inset: 0; background: var(--copper); animation: drop 1.8s var(--ease-out) infinite; }
 @keyframes drop { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
-@media (max-width: 960px) { .hero { position: relative; min-height: auto; padding: 20px 0 56px; } .hero__top { margin-bottom: 18px; } .hero__scroll { display: none; } .log__lines { min-height: 240px; } }
+@media (max-width: 960px) { .hero { position: relative; min-height: auto; padding: 18px 0 56px; } .hero__top { margin-bottom: 18px; flex-direction: column; align-items: flex-start; gap: 14px; } .hero__top .eyebrow { padding-right: 96px; } .hero__scroll { display: none; } .log__lines { min-height: 240px; } }
 @media (max-height: 820px) and (min-width: 961px) { .hero { position: relative; } }
 
 /* ============ 4. Лист ============ */
@@ -314,9 +318,8 @@ html.reduce .robot-stage { animation: none; } html.reduce .robot__eye, html.redu
 .cases { padding-bottom: 48px; }
 .formats { padding-top: 32px; }
 .cases__foot { margin-top: 28px; padding: 18px 22px; background: var(--paper-2); border-left: 3px solid var(--copper); max-width: none; font-size: 15.5px; color: var(--ink-2); }
-.ledger { counter-reset: c; columns: 2; column-gap: 40px; border-top: 2px solid var(--ink); }
-@media (max-width: 860px) { .ledger { columns: 1; } }
-.ledger li { break-inside: avoid; }
+.ledger { counter-reset: c; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; border-top: 2px solid var(--ink); }
+@media (max-width: 860px) { .ledger { grid-template-columns: 1fr; } }
 .ledger li { counter-increment: c; position: relative; padding: 16px 0 16px 44px; border-bottom: 1px solid var(--line); font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
 .ledger li::before { content: counter(c, decimal-leading-zero); position: absolute; left: 0; top: 19px; font-family: var(--font-mono); font-size: 12.5px; color: var(--copper); }
 .ledger b { color: var(--ink); font-weight: 600; }
