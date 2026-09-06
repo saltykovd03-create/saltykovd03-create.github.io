@@ -12,7 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230B1424%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2730%27 fill=%27%23C4712F%27 text-anchor=%27middle%27%3E%D0%94%D0%A1%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css?v=1">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 
@@ -35,17 +35,39 @@
 <section class="hero" aria-label="Главный экран">
   <div class="hero__bg" aria-hidden="true"></div>
   <div class="container hero__top" data-hero-line>
-    <p class="eyebrow eyebrow--light">Дмитрий Салтыков · операционный директор · ИИ-агенты для учёта и процессов</p>
+    <p class="eyebrow eyebrow--light hero__eyebrow-d">Дмитрий Салтыков · операционный директор · ИИ-агенты для учёта и процессов</p>
+    <span class="hero__name">Дмитрий Салтыков</span>
     <a href="https://t.me/shabb1on" class="btn btn--sm btn--copper" target="_blank" rel="noopener">Написать в Telegram</a>
   </div>
   <div class="container hero__grid">
     <div class="hero__text">
+      <p class="eyebrow eyebrow--light hero__eyebrow-m" data-hero-line>Операционный директор · ИИ-агенты для учёта и процессов</p>
       <h1 class="hero__h1">
         <span class="line" data-hero-line>Нет времени внедрять</span>
         <span class="line" data-hero-line>искусственный интеллект?</span>
         <span class="line line--em" data-hero-line>Оно и не нужно.</span>
       </h1>
-      <p class="hero__lead" data-hero-line>Первый работающий агент на ваших данных за неделю. Дальше время экономит уже он.</p>
+      <div class="hero__row" data-hero-line>
+        <p class="hero__lead">Первый работающий агент на ваших данных за неделю. Дальше время экономит уже он.</p>
+        <div class="robot-wrap robot-wrap--m" aria-hidden="true"><div class="robot-stage"><svg class="robot" viewBox="0 0 120 140">
+            <g class="robot__glow"><ellipse cx="60" cy="134" rx="34" ry="4"/></g>
+            <line x1="60" y1="8" x2="60" y2="22" class="robot__line"/>
+            <circle cx="60" cy="6" r="4" class="robot__ant"/>
+            <rect x="22" y="22" width="76" height="52" rx="14" class="robot__head"/>
+            <rect x="30" y="32" width="60" height="32" rx="9" class="robot__screen"/>
+            <rect x="40" y="41" width="12" height="12" rx="3" class="robot__eye"/>
+            <rect x="68" y="41" width="12" height="12" rx="3" class="robot__eye"/>
+            <path d="M48 58h24" class="robot__mouth"/>
+            <rect x="10" y="38" width="10" height="20" rx="4" class="robot__ear"/>
+            <rect x="100" y="38" width="10" height="20" rx="4" class="robot__ear"/>
+            <rect x="48" y="74" width="24" height="8" rx="3" class="robot__neck"/>
+            <rect x="30" y="82" width="60" height="42" rx="12" class="robot__body"/>
+            <rect x="44" y="94" width="32" height="18" rx="5" class="robot__panel"/>
+            <circle cx="52" cy="103" r="2.6" class="robot__led led-a"/>
+            <circle cx="60" cy="103" r="2.6" class="robot__led led-b"/>
+            <circle cx="68" cy="103" r="2.6" class="robot__led led-c"/>
+          </svg><div class="robot-scan"></div></div></div>
+      </div>
       <p class="hero__cold" data-hero-line><b>Три минуты чтения.</b> Куда идёт экономика, что можно снять за неделю и почему ждать уже некуда.</p>
       <dl class="hero__facts" data-hero-line>
         <div><dt>100+</dt><dd>агентов в продакшене</dd></div>
@@ -56,7 +78,7 @@
 
     <div class="hero__side">
       <!-- Блок 2.1. Робот: вращается вокруг оси, мерцает как старый телевизор -->
-      <div class="robot-wrap" aria-hidden="true">
+      <div class="robot-wrap robot-wrap--d" aria-hidden="true">
         <div class="robot-stage">
           <svg class="robot" viewBox="0 0 120 140">
             <g class="robot__glow"><ellipse cx="60" cy="134" rx="34" ry="4"/></g>
@@ -394,6 +416,6 @@
 
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>

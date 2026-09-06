@@ -23,7 +23,8 @@
   ];
   const logEl = document.getElementById('log');
   if (logEl) {
-    LOG.forEach(([t, msg, cls]) => {
+    const LOGV = window.innerWidth < 640 ? LOG.slice(0, 7) : LOG;
+    LOGV.forEach(([t, msg, cls]) => {
       const li = document.createElement('li');
       li.innerHTML = '<time>' + t + '</time><span class="' + cls + '">' + msg + '</span>';
       logEl.appendChild(li);
